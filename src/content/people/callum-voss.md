@@ -1,17 +1,30 @@
 ---
-title: Idris Fenn
+title: Callum Voss
 description:
-  A tutor working across the course's first reviews and the practical work that
-  follows them.
+  Tutor. Ten years writing code-completion tooling before deciding the
+  interesting part was never the ranking model.
 affiliation: Slop University School of Invented Disciplines
 role: tutor
-email: idris.fenn@slop.university
-contact: Ask during sessions, or email when a question cannot wait until the next one.
-photo: ./idris-fenn.avif
-photoAlt: A stylised portrait of a person facing the viewer, flat gold and black shapes on warm cream, in a two-ink risograph print
+email: callum.voss@slop.university
+contact:
+  Ask in the lab first; email is for anything you'd rather not ask in front
+  of the group.
 ---
 
-<!-- STARTER_CONTENT: replace this person entry, then remove this comment. -->
+Callum spent a decade building editor tooling — first a Vim autocomplete
+plugin nobody used, later a ranking layer for a commercial code-completion
+product that shipped to a few million editors. He tutors the weeks on code
+completion and the technical build in Assignment 1, and he is the person in
+the room most likely to point out that a suggestion feature's hardest
+problem is almost never the model — it's deciding when to interrupt someone
+mid-thought.
 
-Replace this entry. A second person makes the listing, role ordering and
-teacher-reference fields visible before you replace the cast with your own.
+He marks labs the week they're submitted, not the week after, and reads
+every prep note before deciding what to focus a lab's opening ten minutes
+on.
+
+## Consultation
+
+Lab hours cover implementation questions. If a question is really about the
+lecture rather than the build, it usually gets a better answer from Priya —
+say so and he'll point you at the right week to ask it in.
