@@ -1,36 +1,48 @@
 ---
-title: First review
+title: Autocorrect post-mortem
 description:
-  The second session, where work made in week 1 meets an audience for the first
-  time
+  A lab spent deliberately breaking an autocorrect implementation, then
+  writing up why each break happened
 week: 2
-date: 2027-03-01
+date: 2027-03-04
 teachers:
-  - idris-fenn
-spec:
-  - work from week 1 is running and can be shown in under two minutes
-  - you can name the one decision you are least sure about
+  - callum-voss
+tags:
+  - failure modes
 related:
+  - lectures/week-02
   - assessments/assignment-1
+spec:
+  - you have found at least three inputs that your chosen autocorrect
+    implementation corrects wrong, and can reproduce each one on demand
+  - for each, you can name the specific mechanism that produced the wrong
+    correction, not just that it happened
+  - you can describe one change that would fix your worst example without
+    obviously breaking something else
 ---
 
-<!-- STARTER_CONTENT: replace this session, then remove this comment. -->
+## Before the lab
 
-Replace this page. It is here so the sessions listing sorts by week, the detail
-route renders a second spec, and the related block has an edge into the
-assessment collection.
+Pick one autocorrect you have access to and can inspect the behaviour of —
+your phone keyboard, a word processor, a code editor's spell-fix. You don't
+need source access; you need the ability to type things into it repeatedly
+and watch what comes out.
 
-## Before the session
+## In the lab
 
-Bring the work from week 1 and the one decision you are least sure about.
+Work in pairs, each trying to break the other's chosen system faster than
+they can explain why it happened. A correction is only useful evidence once
+you can say why it happened — "it changed my name" is a complaint; "it
+scored the dictionary word two edits away higher than my name at zero
+edits, because my name isn't in its dictionary" is the post-mortem.
 
-## In the session
-
-Short demos, then feedback aimed at the decision rather than the polish. What
-makes a review worth attending is that the feedback changes what someone does
-next, so build in the time to act on it.
+The last part of the lab is a short group pass over the ugliest examples in
+the room, sorted into a small number of mechanisms — the same three or four
+causes tend to explain almost everything.
 
 ## Afterwards
 
-If attendance or participation is worth marks, say so here and link the rule to
-the [assessment page](/assessments/) rather than restating it.
+Keep your failures on hand. Assignment 1 asks you to build something in this
+family, and a working knowledge of how these systems fail — not just that
+they do — is most of what separates a build that gets the interesting parts
+right from one that reinvents the same failure without noticing.
