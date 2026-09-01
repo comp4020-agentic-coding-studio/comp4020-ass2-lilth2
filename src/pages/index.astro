@@ -2,48 +2,53 @@
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import heroImage from "../assets/images/hero-home.avif";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
-  heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
   {...siteConfig}
 >
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
   <h2>What you will do</h2>
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    Every week pairs a lecture on one predictive-text domain with a lab where
+    you build or interrogate an artefact from it: a toy T9 disambiguator, an
+    autocorrect you deliberately break, an audit of your own inbox's smart
+    replies, a side-by-side of three forecast UIs and how each one hides its
+    uncertainty. You leave the semester with a small portfolio of builds and
+    case studies, and a final project that turns one of them into a proper
+    audit of a real product's suggestion design.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    A student a couple of years into a CS or HCI-adjacent degree who already
+    writes small programs without help, and who is more interested in why a
+    piece of software suggests what it suggests than in shipping a polished
+    app. If you have never once been annoyed at autocorrect, or "it's just
+    next-token prediction" feels like it ends the conversation rather than
+    starting one, this course is aimed a little past you.
   </p>
 
   <h2>Where to go next</h2>
   <CardGrid columns={2}>
     <Card title={sessionLabels.plural} href="/sessions/">
-      <p>The weekly schedule and what happens in each teaching session.</p>
+      <p>The twelve-week schedule and what to bring to each lab.</p>
     </Card>
     <Card title="Assessment" href="/assessments/">
       <p>What is marked, what it is worth, and when it is due.</p>
     </Card>
     <Card title="People" href="/people/">
       <p>Who teaches the course and how to reach them.</p>
+    </Card>
+    <Card title="Policies" href="/policies/">
+      <p>Late work, extensions, and how you're allowed to use predictive tools here.</p>
     </Card>
   </CardGrid>
 </ContentLayout>
