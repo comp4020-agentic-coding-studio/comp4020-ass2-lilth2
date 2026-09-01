@@ -1,53 +1,56 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
-
-Written by you, for a reader: how you got from the brief to the harness and
-agentic workflow behind this submission. Markers read this file and follow its
-citations; they don't trawl the repo for evidence you didn't point at.
-
-This file is the shape; the course site's
-[assessment page](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#what-you-submit)
-is the requirement, and its
-[word counts](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/topics/assessment/#word-counts)
-cover every deliverable.
-
 ## What I built
 
-One paragraph: the thing, and the idea behind it.
+SLOP3203, *Autocomplete Studies* — a course that treats predictive text as one
+continuous design lineage rather than a recent AI phenomenon, running from
+1990s T9 keypads through autocorrect, search, assistive input, code
+completion, smart replies, chat, generative fill, forecasting, co-writing, and
+recommendation feeds, closing with a guest lecture on persuasive design. Every
+week is a variation on one stated tension — a small vocabulary, an ambiguous
+signal, and a dictionary with opinions about what you probably meant — so the
+twelve weeks read as one argument rather than twelve unrelated topics.
 
 ## How I got here
 
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
+I started from the platform boundary in `README.md`: the Slop branding, the
+four content collections, and the generated API are fixed, so the actual work
+was entirely inside content and the course-specific spec checks. Course
+identity came first — [`032f50c`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/032f50c) sets the code to SLOP3203, keeping the
+pre-assigned `203` and choosing the `3` level digit deliberately, since the
+technical-build-plus-audit assessment structure suits students partway through
+a CS/HCI degree, not first-years or postgrads.
 
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
+I decided early to go image-free rather than fill the starter's hero and
+portrait slots with stock or AI-generated art — a course about the
+artificiality of machine-generated continuations leaning on decorative
+AI-flavoured imagery to sell itself would undercut its own argument, so
+[`b1d978d`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/b1d978d) rewrites the home page and 404 around that decision
+instead of working around it. Content followed in dependency order: people
+([`5f61667`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/5f61667)) before the weeks that reference them by name, labs
+([`8f793cd`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/8f793cd)) and lectures plus the week 1 slide deck
+([`5bf51e4`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/5bf51e4)) before the assessments that cite specific weeks
+([`97e4ef0`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/97e4ef0)), then policies
+([`92ce23a`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/92ce23a)) once the tool-use rules had real assignments to
+refer to.
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
+Writing all twelve weeks surfaced the actual risk in a course like this: it's
+easy to write twelve lectures that are really one lecture repeated with
+different nouns. I checked this by re-reading the set for whether any week
+could be moved elsewhere without a rewrite — the code-completion week only
+works right after the AAC week's argument about prediction as access, and the
+forecasting week only works because the smart-reply and chat weeks already
+established the same evidence-first audit method. `spec/course-coherence.test.ts`
+catches exact duplicates but not a paraphrase, so
+[`a310708`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/a310708) adds `course-structure.test.ts` to check what that
+test can't: distinct titles across all 24 dated nodes, assessment weights
+summing to exactly 100, the deck actually building at its linked path, and
+every week connected into the graph rather than sitting isolated.
 
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
-
-> the prompt, verbatim
-
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
-
-## Before you ship
-
-`pnpm check:evidence` verifies that this comment is gone, that your citations
-resolve to real commits, that a crit week's reflection entry is in
-`reflections/`, and that your `CLAUDE.md` is there. It checks that your account
-is traceable, not that it is good: that is the marker's call.
-
-Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
-image is visible the moment this file is rendered on GitHub.
+I verified the result three ways: `pnpm check` (typecheck, build, and both
+test files) after every commit, `pnpm check:evidence` once this file's
+citations existed to check, and a Playwright pass over the home page, a
+lecture page, its deck, a lab page, and the assessments and people pages at
+both 1920×1080 and 390×844 — confirming the deck's forced 16:9 letterboxing on
+mobile is Reveal.js behaviour, not a bug, and that the 404 page still gets a
+heading now that it has no hero image to supply one.
