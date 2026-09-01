@@ -1,48 +1,99 @@
 ---
-title: Opening lecture
-description: The placeholder deck — replace it with a real deck for your course
+title: Multi-tap, T9, and the keypad that started it
+description: Week 1 opening deck for Autocomplete Studies — the keypad as the ancestor of every prediction system this course covers
 ---
 
-# Opening lecture
+{/* _class: impact */}
 
-{/* STARTER_CONTENT: replace this deck, then remove this comment. */}
+# Autocomplete Studies
 
-Replace this deck. It is here to show that slides are part of the site, built
-from the same markdown as everything else.
+Week 1 — before the screen, the keypad
 
 ---
 
-## Slides are markdown
+## Twelve keys. Twenty-six letters.
 
-A `---` starts a new slide. Everything else is ordinary markdown: headings,
-lists, links, tables, images, fenced code.
+Every letter after the first press of a key is a guess.
 
-- one idea per slide
-- the fewest words that carry it
-- the deck is a performance artefact, so it can say things a page wouldn't
+That guess is predictive text. It always has been.
+
+---
+
+{/* _class: centered */}
+
+## Multi-tap
+
+Press `4` once for **G**, twice for **H**, three times for **I**.
+
+Slow. Unambiguous. Nobody predicts anything.
+
+---
+
+## T9
+
+Press `4663` once, in order.
+
+The phone looks up every word that mapping could spell:
+**good**, **home**, **hood**, **goof**...
+
+...and picks one. That pick is the whole course.
+
+---
+
+{/* _class: quote */}
+
+> "Text on 9 keys" — the name says exactly what it does,
+> and nothing about how strange that is to actually build.
+
+---
+
+## The tension, stated once
+
+- a small, fixed **vocabulary** (the dictionary)
+- an ambiguous **signal** (the keypress sequence)
+- a **ranking** someone built, resolving the ambiguity
+
+Every week this semester changes one of these three things.
+
+---
+
+{/* _class: banner */}
+
+## Week 2 changes the vocabulary's confidence
+
+Autocorrect: the same ranking, applied uninvited.
+
+---
+
+{/* _class: banner */}
+
+## Week 5 changes the signal
+
+Code completion: the signal is a program, not a word.
+
+---
+
+{/* _class: banner */}
+
+## Week 7 changes the scale
+
+A chat model: the same ranking, one token at a time,
+run long enough to look like an answer.
+
+---
+
+{/* _class: centered */}
+
+## Today's lab
+
+Build the T9 disambiguator. `4663` should return **good** and
+**home** — and you should be able to defend which one comes first.
 
 ---
 
 {/* _class: impact */}
 
-# A slide class
+## Whose dictionary?
 
-`{/* _class: impact */}` fills the slide with the brand colour. `quote`,
-`banner` and `centered` are the others the theme styles.
-
----
-
-## What else is here
-
-```sh
-pnpm dev
-pnpm check
-```
-
-The second command proves the deck compiles with the rest of the site. Use the
-first to inspect every slide at the desktop and phone marking viewports; slide
-fit and legibility are visual judgements.
-
-The [astromotion](https://github.com/ANUcybernetics/astromotion) README has the
-rest of the syntax: speaker notes, backgrounds, QR codes, fragments, and
-components hydrated per slide.
+Keep that question. It doesn't go away for the rest of the semester —
+it just changes what counts as the dictionary.
