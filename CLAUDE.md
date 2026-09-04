@@ -40,9 +40,10 @@ under `dist/`.
   (technical-build-plus-critical-essay assessment suits students a couple of
   years into a CS/HCI major); don't change either digit without being asked.
 - **No repeated weeks**: each of the 12 sessions (Labs) pairs with a distinct
-  hands-on artifact and each lecture covers a domain the others don't (T9, IME,
-  autocorrect, routing, smart replies, code completion, LLM chat, generative
-  fill, forecasting, creative writing, persuasion). Before adding or editing a
+  hands-on artifact and each lecture covers a domain the others don't (T9,
+  autocorrect, query completion, AAC/assistive input, code completion, smart
+  replies, conversational chat, image inpainting, forecasting, co-writing,
+  feed recommendation, persuasion). Before adding or editing a
   week, check it isn't a reworded copy of another week's spec or body —
   `spec/course-structure.test.ts` catches exact duplicate titles but a
   paraphrase under a different title will slip past it; that judgement call
