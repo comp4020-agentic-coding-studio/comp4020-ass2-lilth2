@@ -40,12 +40,15 @@ different nouns. I checked this by re-reading the set for whether any week
 could be moved elsewhere without a rewrite — the code-completion week only
 works right after the AAC week's argument about prediction as access, and the
 forecasting week only works because the smart-reply and chat weeks already
-established the same evidence-first audit method. `spec/course-coherence.test.ts`
-catches exact duplicates but not a paraphrase, so
-[`a310708`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/a310708) adds `course-structure.test.ts` to check what that
-test can't: distinct titles across all 24 dated nodes, assessment weights
-summing to exactly 100, the deck actually building at its linked path, and
-every week connected into the graph rather than sitting isolated.
+established the same evidence-first audit method. Nothing shipped catches a
+reworded week — the platform's own `data-integrity.test.ts` only checks that
+dated content falls inside the teaching period — so
+[`a310708`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-lilth2/commit/a310708) adds `course-structure.test.ts`: distinct titles across
+all 24 dated nodes, assessment weights summing to exactly 100, the deck
+actually building at its linked path, and every week connected into the
+graph rather than sitting isolated. That catches an exact reworded duplicate
+by title; a genuine paraphrase under a different title still needs the
+by-hand re-read above, not a test.
 
 I verified the result three ways: `pnpm check` (typecheck, build, and both
 test files) after every commit, `pnpm check:evidence` once this file's

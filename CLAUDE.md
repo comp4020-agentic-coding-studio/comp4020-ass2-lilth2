@@ -44,8 +44,9 @@ under `dist/`.
   autocorrect, routing, smart replies, code completion, LLM chat, generative
   fill, forecasting, creative writing, persuasion). Before adding or editing a
   week, check it isn't a reworded copy of another week's spec or body —
-  `spec/course-coherence.test.ts` catches exact duplicates but a paraphrase
-  will slip past it; that judgement call is the agent's, not the test's.
+  `spec/course-structure.test.ts` catches exact duplicate titles but a
+  paraphrase under a different title will slip past it; that judgement call
+  is the agent's, not the test's.
 - **Tone**: sincere and specific, the way a real course site reads — not
   jokey, not a marketing brochure. No "unlock your potential," no
   self-aware jokes about SlopU being fake. Specificity is what makes a
@@ -57,7 +58,7 @@ under `dist/`.
   images to "fill space"; if an image is ever added, it must be specific to
   this course, not decorative filler.
 - **Assessment weights must sum to exactly 100.** If you add, remove, or
-  reweight an assessment, `spec/course-coherence.test.ts` will fail loudly —
+  reweight an assessment, `spec/course-structure.test.ts` will fail loudly —
   fix the weights, don't loosen the test.
 
 ## Before treating anything as done
